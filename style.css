@@ -1,0 +1,650 @@
+/* ===== Google Font Import - Poformsins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+    background: url('./nav.jpeg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    /* background: #fff; */
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 0 20px;
+}
+
+.container .forms{
+    display: flex;
+    align-items: center;
+    height: 440px;
+    width: 200%;
+   
+    transition: height 0.2s ease;
+}
+
+
+.container .form{
+    width: 50%;
+    padding: 30px;
+    /* background-color: #fff; */
+    transition: margin-left 0.18s ease;
+    background-color:#fff;
+}
+
+.container.active .login{
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.18s ease, opacity 0.15s ease;
+    background-color: #fff;
+}
+
+.container .signup{
+    opacity: 0;
+    transition: opacity 0.09s ease;
+}
+.container.active .signup{
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.container.active .forms{
+    height: 550px;
+}
+.container .form .title{
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+    text-align:center;
+}
+.form .title::before{
+    content: '';
+    position:center;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background-color: #fff;
+    border-radius: 25px;
+}
+
+.form .input-field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.input-field input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid){
+    border-bottom-color: #4070f4;
+}
+
+.input-field i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4070f4;
+    font-size: 23px;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i{
+    color: #4070f4;
+}
+
+.input-field i.icon{
+    left: 0;
+}
+.input-field i.showHidePw{
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.form .checkbox-text{
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+}
+
+.checkbox-text .checkbox-content{
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-content input{
+    margin: 0 8px -2px 4px;
+    accent-color: #fff;
+}
+
+.form .text{
+    color:skyblue;
+    font-size: 14px;
+}
+
+.form a.text{
+    color:skyblue;
+    text-decoration: none;
+}
+.form a:hover{
+    text-decoration: underline;
+}
+
+.form .button{
+    margin-top: 20px;
+}
+
+.form .button input{
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: skyblue;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button input:hover{
+    background-color: #b659b673;
+}
+
+.form .login-signup{
+    margin-top: 30px;
+    text-align: center;
+    color:#4070f4;
+}
+
+#login-regsiter{
+    position:fixed;
+    color:#4070f4;
+}
+
+#forgetpassword{
+    cursor: pointer;
+}
+
+/****** Navbar *******/
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: skyblue;
+    box-shadow: 0px 5px 10px 0px pink;
+    font-family: 'Poppins', sans-serif;
+    margin: auto;
+}
+.logo{
+    margin-left: 80px;
+}
+.logotitle{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: 200px;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-between;
+    /* width: 18%; */
+    width: 350px;
+}
+
+/****** Loading Circle *******/
+
+#circle{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    top: 90%;
+    display: none;
+    transform: translate(-50%,-50%);
+    border: 6px solid white;
+    border-radius: 50%;
+    border-top-color: rgb(8, 8, 8);
+    border-left-color: rgb(8, 8, 8);
+    animation: animate 1s linear infinite;
+}
+
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/****** Dashboard *******/
+#dashboard{
+    min-height: 100vh;
+    height:100%;
+    width: 100%;
+    background-image:url(./m1.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    display: none;
+}
+
+.add-wrapper{
+    margin: 50px;
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add-wrapper li, .class-wrapper li{
+    height: 150px;
+    list-style: none;
+    background: grey;
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 15px 20px 20px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+.add-box, .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+.add-box .icon{
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    border-radius: 50%;
+    border: 2px dashed white;
+}
+.add-box p{
+    font-weight: bold;
+    margin-top: 20px;
+}
+.class-wrapper{
+    margin: 60px;
+    display: grid;
+    gap: 60px;
+    grid-template-columns: repeat(auto-fill,300px);
+}
+.text{
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.your-classes{
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+
+
+
+
+.popup-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+  }
+.popup-box .popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
+    transform: translate(-50%, -50%) scale(0.95);
+}
+.popup-box, .popup{
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+.popup-box.show, .popup-box.show .popup{
+    opacity: 1;
+    pointer-events: auto;
+}
+.popup-box.show .popup{
+    transform: translate(-50%, -50%) scale(1);
+}
+.popup .content{
+    border-radius: 5px;
+    background: #fff;
+    width: calc(100% - 15px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.content header{
+    padding: 15px 15px;
+    border-bottom: 1px solid #ccc;
+}
+.content header p{
+    font-size: 20px;
+    font-weight: 500;
+}
+.content header i{
+    color: #8b8989;
+    cursor: pointer;
+    font-size: 23px;
+}
+.content form{
+    margin: 25px 25px 35px;
+}
+
+form .row label{
+    font-size: 18px;
+    display: block;
+}
+form :where(input){
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 17px;
+    padding: 0 15px;
+    border-radius: 4px;
+    border: 1px solid #999;
+}
+form :where(input):focus{
+    box-shadow: 0 2px 4px rgba(0,0,0,0.11);
+}
+form .row{
+    height: 120px;
+    resize: none;
+    padding: 10px 15px;
+}
+form button{
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 4px;
+    background: #6A93F8;
+}
+.popup, header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.qrgenerateBar{
+    display: none;
+}
+
+.qrarea{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+#qrbtn{
+    background-color: #0080ff;
+    font-size: 20px;
+    width: 190px;
+    padding: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 90px;
+}
+.qrdestroy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-bottom: 30px; */
+}
+#qrstopbtn{
+    margin-top: 20px;
+    background-color: #0080ff;
+    font-weight: bold;
+    font-size: 18px;
+    width: 200px;
+    padding: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: none;
+}
+.studentAttendace{
+    margin-top: 140px;
+    margin-bottom: 200px;
+    border-top: 3px solid red;
+}
+.sAHead{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 60px;
+}
+
+
+.content-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 20px;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    text-transform: uppercase;
+}
+.content-table thead tr{
+    background-color: #009879;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    border: 1.5px solid red;
+}
+.content-table th,
+.content-table td{
+    padding: 12px 15px;
+}
+.table-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#excel{
+    margin-top: 30px;
+    background-color: #0080ff;
+    font-weight: bold;
+    font-size: 10x;
+    width: 170px;
+    padding: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+#back{
+    margin-top: 30px;
+    background-color: #0080ff;
+    font-weight: bold;
+    font-size: 10x;
+    width: 170px;
+    padding: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-left: 30px;
+}
+#selectdate{
+    text-align: center;
+    margin-top: 30px;
+}
+#formText{
+    font-size: 40px;
+}
+#form-date{
+    background-color: #0080ff;
+    padding: 10px;
+    width: 13%;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+#datesubmit{
+    margin-top: 20px;
+    background-color: #0080ff;
+    font-size: 18px;
+    width: 190px;
+    padding: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    border: 3px solid black;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#studaTab{
+    display: none;
+}
+#qrsizelabel{
+    font-size: 25px;
+}
+#qrtimelabel{
+    font-size: 25px;
+    margin-left: 30px;
+}
+.qroptions{
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#qrsize{
+    background-color: #0080ff;
+    width: 150px;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    border: 3px solid black;
+    outline: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    text-align: center;
+}
+#qrtime{
+    background-color: #0080ff;
+    padding: 10px;
+    width: 100px;
+    color: #ffffff;
+    font-size: 18px;
+    border: 3px solid black;
+    outline: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    text-align: center;
+}
+#qrsize option,
+#qrtime option{
+    background-color: white;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+}
+.output{
+    display: none;
+    width: 1200px;
+    height: 810px;
+    align-self: center;
+    text-align: center;
+    position: relative;
+}
+.output img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#classnameh{
+    align-self: flex-start;
+    font-size: 40px;
+    margin-top: 40px;
+    margin-left: 70px;
+    font-weight: 500;
+}
+
+#dashHome,#dashAbout,#dashLogout{
+    background-color: #0080ff;
+    font-size: 15px;
+    margin-left: 20px;
+    height: 40px;
+    width: 200px;
+    /* padding: 10px; */
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}

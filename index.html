@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!-- === Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./favicon.png">
+    <title>VNS College Attendance</title>
+    <script type="text/javascript">
+        function warning()
+        {
+            return "";
+        }
+        window.onbeforeunload = warning;
+    </script>
+</head>
+<body>
+    
+    <div id="login-regsiter" class="container">
+        <div class="forms">
+            <div class="form login">
+                <div class="title">Login</div>
+
+                <form action="#">
+                    <div class="input-field">
+                        <input id="lemail" type="text" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input id="lpassword" type="password" class="password" placeholder="Enter your password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <a id="forgetpassword" class="text" style="color:black;">Forgot password?</a>
+                    </div>
+
+                    <div class="input-field button">
+                        <input id="loginbtn" type="button" style="color:black;" value="Login Now">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text" style="color:black;">Not a member?
+                        <a href="#" class="text signup-link" style="color:black;">Register now</a>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="form signup">
+                <div class="title">Registration</div>
+
+                <form action="#">
+                    <div class="input-field">
+                        <input id="rname" type="text" placeholder="Enter your name" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input id="remail" type="text" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input id="rphone" type="phone" class="phoneno" placeholder="Enter your phone no" required>
+                        <i class="uil uil-phone"></i>
+                    </div>
+                    <div class="input-field">
+                        <input id="rpassword" type="password" class="password" placeholder="Create a password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="input-field button">
+                        <input id="registerbtn" style="color:black;" type="button" value="Register Now">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text" style="color:black;">Already a member?
+                        <a href="#" style="color:black;" class="text login-link">Login now</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="circle"></div>
+
+    <div id="dashboard">
+        <nav>
+            <div class="logo">
+                <img src="./logo.png" alt="" height="60px">
+            </div>
+            <div class="logotitle">VNS College Attendance</div>
+            <ul class="nav-links">
+                <button id="dashHome">Home</button>
+                <!-- <button id="dashAbout">About Us</button> -->
+                <button id="dashLogout">Logout</button>
+            </ul>
+        </nav>
+        <div class="addclassesBar">
+            <div class="popup-box">
+                <div class="popup">
+                  <div class="content">
+                    <header>
+                      <p></p>
+                      <i class="uil uil-times"></i>
+                    </header>
+                    <form action="#">
+                      <div class="row title">
+                        <label>Class Name</label>
+                        <input type="text" id="classnam" spellcheck="false">
+                      </div>
+                      <button></button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            <div class="add-wrapper">
+                <li class="add-box">
+                    <div class="icon"><i class="uil uil-plus"></i></div>
+                    <p>Add New Class</p>
+                </li>
+            </div>
+            <h1 class="your-classes">Your Classes :</h1>
+            <div class="class-wrapper">
+                
+            </div>
+        </div>
+        <div class="qrgenerateBar">
+            <section class="qrarea">
+                <h1 id="classnameh"></h1>
+                <div class="output"></div>
+                <div class="qroptions">
+                    <label id="qrsizelabel" for="qrsize">Select QR Size:</label>
+                    <select id="qrsize">
+                        <option value="200x200">200 x 200</option>
+                        <option value="300x300">300 x 300</option>
+                        <option value="400x400">400 x 400</option>
+                        <option value="500x500" selected>500 x 500</option>
+                        <option value="600x600">600 x 600</option>
+                        <option value="700x700">700 x 700</option>
+                    </select>
+                    <label id="qrtimelabel" for="qrtime">Select QR TIme:</label>
+                    <select id="qrtime">
+                        <option value="3000">3 sec</option>
+                        <option value="4000">4 sec</option>
+                        <option value="5000" selected>5 sec</option>
+                        <option value="6000">6 sec</option>
+                        <option value="7000">7 sec</option>
+                        <option value="8000">8 sec</option>
+                        <option value="9000">9 sec</option>
+                    </select>
+                </div>
+                <button id="qrbtn">Generate QR</button>
+            </section>
+        
+            <section class="qrdestroy">
+                <button id="qrstopbtn">Stop QR</button>
+            </section>
+        
+            <section id="studAtBar" class="studentAttendace">
+                <h1 class="sAHead">Student Attendance List</h1>
+                <section id="selectdate">
+                    <form class="form" onsubmit="return false;">
+                        <label id="formText" for="form-date">Select Date:</label>
+                        <input type="date" name="dateData" id="form-date">
+                        <br>
+                        <button id="datesubmit">submit</button>
+                    </form>
+                </section>
+                <section id="studaTab">
+                    <div class="table-container">
+                        <div>
+                            <button id="excel">Export to Excel</button>
+                            <button id="back">Go Back</button>
+                        </div>
+                        <table id="download-excel" class="content-table">
+                            <thead>
+                                <th>SNo</th>
+                                <th>RollNumber</th>
+                                <th>UserName</th>
+                                <th>Time</th>  
+                                <th>Date</th>  
+                            </thead>
+                            <tbody id="tbody1"></tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+
+    <script src="./table2excel.js"></script>
+    <script type="module" src="./fire.js"></script>
+</body>
+</html>
